@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><title>AI-Based Flight Risk Monitoring System</title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <img src="images/logo.png" class="logo">
+    <h1><title>AI-Based Flight Risk Monitoring System</title></h1>
+</header>
+
+<section class="hero">
+    <h2>Real-Time Flight Risk Prediction</h2>
+    <p>Uses live weather data and AI logic to analyze and predict flight safety conditions.</p>
+</section>
+
+<section class="cards">
+
+    <div class="card" onclick="showSection('flight')">
+        <img src="images/plane1.jpg">
+        <h3>Flight Monitoring</h3>
+        <p>Track flight conditions in real-time.</p>
+    </div>
+
+    <div class="card" onclick="showSection('weather')">
+        <img src="images/weather.jpg">
+        <h3>Weather Analysis</h3>
+        <p>Detect storms and dangerous wind speeds.</p>
+    </div>
+
+    <div class="card" onclick="showSection('ai')">
+        <img src="images/ai.jpg">
+        <h3>AI Prediction</h3>
+        <p>Smart risk detection using AI logic.</p>
+    </div>
+
+</section>
+
+<div class="dynamic-content" id="dynamicContent" style="display:none;"></div>
+
+<section class="input-section">
+
+    <input type="text" id="source" placeholder="Enter Source (e.g. Mumbai)">
+    <input type="text" id="destination" placeholder="Enter Destination (e.g. Delhi)">
+
+    <input type="number" id="wind" placeholder="Wind Speed (km/h)">
+    <input type="number" id="temp" placeholder="Temperature (°C)">
+
+    <br><br>
+
+    <button onclick="getWeather()">🌦 Get Live Weather</button>
+    <button onclick="checkRisk()">✈ Check Risk</button>
+    <button onclick="toggleAuto()">🔄 Auto Mode</button>
+
+    <div class="output-box">
+        <p id="weatherResult"></p>
+        <h2 id="result"></h2>
+    </div>
+
+</section>
+
+<section class="chart-section" id="chartSection">
+    <h2>📊 Risk Analysis Chart</h2>
+    <canvas id="riskChart"></canvas>
+</section>
+
+<section class="history-section">
+    <h2>📊 Flight History</h2>
+    <button onclick="loadFlights()">Show History</button>
+    <div id="history"></div>
+</section>
+
+<script src="app.js"></script>
+
+</body>
+</html>
